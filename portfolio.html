@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — B.C. Builders L.L.C.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1e3a5f',
+            'navy-dark': '#152a45',
+            gold: '#e8a020',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="leading-tight">
+        <div class="font-bold text-lg uppercase tracking-wide text-navy">B.C. Builders L.L.C.</div>
+        <div class="text-xs uppercase tracking-widest text-gray-400">Concrete Engraving</div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-navy border-b-2 border-gold">Portfolio</a>
+        <a href="services.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Services</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
+      </div>
+      <a href="contact.html" class="bg-gold text-white text-sm font-bold uppercase tracking-wide px-5 py-2 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="bg-navy py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">B.C. Builders L.L.C.</p>
+      <h1 class="text-4xl font-bold text-white">Portfolio</h1>
+    </div>
+  </div>
+
+  <!-- PHOTO GRID -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-gray-500 mb-10 text-sm">Photos coming soon — check back after our first projects are complete.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-100 rounded overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Residential</p>
+            <h3 class="font-bold text-navy">Driveway Engraving</h3>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Residential</p>
+            <h3 class="font-bold text-navy">Patio Design</h3>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Commercial</p>
+            <h3 class="font-bold text-navy">Walkway Engraving</h3>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Residential</p>
+            <h3 class="font-bold text-navy">Decorative Wall</h3>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Commercial</p>
+            <h3 class="font-bold text-navy">Interior Floor</h3>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Memorial</p>
+            <h3 class="font-bold text-navy">Headstone Engraving</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold text-white mb-4">Like what you see?</h2>
+      <p class="text-gray-300 mb-8">Let's talk about what we can do for your concrete surfaces.</p>
+      <a href="contact.html" class="bg-gold text-white font-bold uppercase tracking-wide px-8 py-3 rounded hover:opacity-90 transition-opacity">Request a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 B.C. Builders L.L.C. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Contact</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

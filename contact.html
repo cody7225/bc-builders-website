@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — B.C. Builders L.L.C.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1e3a5f',
+            'navy-dark': '#152a45',
+            gold: '#e8a020',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="leading-tight">
+        <div class="font-bold text-lg uppercase tracking-wide text-navy">B.C. Builders L.L.C.</div>
+        <div class="text-xs uppercase tracking-widest text-gray-400">Concrete Engraving</div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
+        <a href="services.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Services</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-navy border-b-2 border-gold">Contact</a>
+      </div>
+      <a href="contact.html" class="bg-gold text-white text-sm font-bold uppercase tracking-wide px-5 py-2 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="bg-navy py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">B.C. Builders L.L.C.</p>
+      <h1 class="text-4xl font-bold text-white">Get a Free Quote</h1>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-16">
+
+      <!-- Form -->
+      <div class="w-full lg:w-2/3">
+        <h2 class="text-2xl font-bold text-navy mb-2">Request a Quote</h2>
+        <p class="text-gray-500 text-sm mb-8">Tell us about your project and we'll reach out within 1 business day.</p>
+        <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="space-y-6">
+          <input type="hidden" name="form-name" value="quote-request">
+          <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-xs uppercase tracking-wide font-bold text-navy mb-2">Name *</label>
+              <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors">
+            </div>
+            <div>
+              <label for="phone" class="block text-xs uppercase tracking-wide font-bold text-navy mb-2">Phone *</label>
+              <input type="tel" id="phone" name="phone" required class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors">
+            </div>
+          </div>
+          <div>
+            <label for="email" class="block text-xs uppercase tracking-wide font-bold text-navy mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors">
+          </div>
+          <div>
+            <label for="description" class="block text-xs uppercase tracking-wide font-bold text-navy mb-2">Project Description *</label>
+            <textarea id="description" name="description" required rows="5" placeholder="Describe the surface, approximate size, and the type of engraving you have in mind..." class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="bg-gold text-white font-bold uppercase tracking-wide px-8 py-3 rounded hover:opacity-90 transition-opacity">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="w-full lg:w-1/3">
+        <h2 class="text-2xl font-bold text-navy mb-2">Contact Us Directly</h2>
+        <p class="text-gray-500 text-sm mb-8">Prefer to call or email? We're easy to reach.</p>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="mt-1 w-10 h-10 bg-navy rounded flex items-center justify-center text-white text-lg flex-shrink-0">📞</div>
+            <div>
+              <p class="text-xs uppercase tracking-wide font-bold text-navy mb-1">Phone</p>
+              <a href="tel:4103109207" class="text-gray-700 hover:text-gold transition-colors font-medium">(410) 310-9207</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="mt-1 w-10 h-10 bg-navy rounded flex items-center justify-center text-white text-lg flex-shrink-0">✉️</div>
+            <div>
+              <p class="text-xs uppercase tracking-wide font-bold text-navy mb-1">Email</p>
+              <a href="mailto:b.c.builders93@gmail.com" class="text-gray-700 hover:text-gold transition-colors font-medium">b.c.builders93@gmail.com</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="mt-1 w-10 h-10 bg-navy rounded flex items-center justify-center text-white text-lg flex-shrink-0">📍</div>
+            <div>
+              <p class="text-xs uppercase tracking-wide font-bold text-navy mb-1">Service Area</p>
+              <p class="text-gray-700 font-medium">Eastern Shore, MD</p>
+              <p class="text-gray-500 text-sm">Willing to travel within ~2 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 B.C. Builders L.L.C. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Contact</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
