@@ -18,6 +18,85 @@
       }
     }
   </script>
+  <style>
+    .gallery-item {
+      overflow: hidden;
+      cursor: pointer;
+      background: #d1d5db;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-item .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    #lightbox.open {
+      display: flex;
+    }
+    #lightbox img {
+      max-height: 88vh;
+      max-width: 88vw;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+    }
+    .lb-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 4px;
+    }
+    .lb-btn:hover { background: rgba(255,255,255,0.25); }
+    #lb-prev { left: 1.5rem; }
+    #lb-next { right: 1.5rem; }
+    #lb-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    #lb-close:hover { opacity: 1; }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans text-gray-800">
 
@@ -41,62 +120,57 @@
   <div class="bg-navy py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">B.C. Builders L.L.C.</p>
-      <h1 class="text-4xl font-bold text-white">Portfolio</h1>
+      <h1 class="text-4xl font-bold text-white">Our Work</h1>
+      <p class="text-gray-300 mt-3">Click any photo to view it full screen.</p>
     </div>
   </div>
 
-  <!-- PHOTO GRID -->
-  <section class="bg-white py-16">
+  <!-- GALLERY -->
+  <section class="bg-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-gray-500 mb-10 text-sm">Photos coming soon — check back after our first projects are complete.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-100 rounded overflow-hidden">
-          <div class="aspect-video overflow-hidden">
-            <img src="driveway.jpg" alt="Concrete driveway" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4">
-            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Residential</p>
-            <h3 class="font-bold text-navy">Driveway</h3>
-          </div>
+
+      <!-- Masonry-style grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="gallery">
+
+        <!-- Real photo — tall left slot -->
+        <div class="gallery-item rounded row-span-2" style="height:520px;" data-index="0">
+          <img src="driveway.jpg" alt="Concrete driveway">
         </div>
-        <div class="bg-gray-100 rounded overflow-hidden">
-          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
-          <div class="p-4">
-            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Residential</p>
-            <h3 class="font-bold text-navy">Patio Design</h3>
-          </div>
+
+        <!-- Placeholders -->
+        <div class="gallery-item rounded" style="height:254px;" data-index="1">
+          <div class="placeholder">Photo Coming Soon</div>
         </div>
-        <div class="bg-gray-100 rounded overflow-hidden">
-          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
-          <div class="p-4">
-            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Commercial</p>
-            <h3 class="font-bold text-navy">Walkway Engraving</h3>
-          </div>
+        <div class="gallery-item rounded" style="height:254px;" data-index="2">
+          <div class="placeholder">Photo Coming Soon</div>
         </div>
-        <div class="bg-gray-100 rounded overflow-hidden">
-          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
-          <div class="p-4">
-            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Residential</p>
-            <h3 class="font-bold text-navy">Decorative Wall</h3>
-          </div>
+        <div class="gallery-item rounded" style="height:254px;" data-index="3">
+          <div class="placeholder">Photo Coming Soon</div>
         </div>
-        <div class="bg-gray-100 rounded overflow-hidden">
-          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
-          <div class="p-4">
-            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Commercial</p>
-            <h3 class="font-bold text-navy">Interior Floor</h3>
-          </div>
+        <div class="gallery-item rounded" style="height:254px;" data-index="4">
+          <div class="placeholder">Photo Coming Soon</div>
         </div>
-        <div class="bg-gray-100 rounded overflow-hidden">
-          <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-400 text-sm uppercase tracking-wide font-medium">Photo Coming Soon</div>
-          <div class="p-4">
-            <p class="text-xs uppercase tracking-wide text-gold font-bold mb-1">Memorial</p>
-            <h3 class="font-bold text-navy">Headstone Engraving</h3>
-          </div>
+        <div class="gallery-item rounded" style="height:254px;" data-index="5">
+          <div class="placeholder">Photo Coming Soon</div>
         </div>
+        <div class="gallery-item rounded" style="height:254px;" data-index="6">
+          <div class="placeholder">Photo Coming Soon</div>
+        </div>
+        <div class="gallery-item rounded" style="height:254px;" data-index="7">
+          <div class="placeholder">Photo Coming Soon</div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button id="lb-close">&times;</button>
+    <button class="lb-btn" id="lb-prev">&#8592;</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-btn" id="lb-next">&#8594;</button>
+  </div>
 
   <!-- CTA -->
   <section class="bg-navy py-16">
@@ -117,6 +191,62 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const items = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbClose = document.getElementById('lb-close');
+    const lbPrev = document.getElementById('lb-prev');
+    const lbNext = document.getElementById('lb-next');
+
+    // Build list of real images only
+    const realImages = [];
+    items.forEach((item, i) => {
+      const img = item.querySelector('img');
+      if (img) realImages.push({ src: img.src, alt: img.alt });
+      item.addEventListener('click', () => {
+        if (!img) return;
+        const idx = realImages.findIndex(r => r.src === img.src);
+        openLightbox(idx);
+      });
+    });
+
+    let current = 0;
+
+    function openLightbox(idx) {
+      if (realImages.length === 0) return;
+      current = idx;
+      lbImg.src = realImages[current].src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    lbPrev.addEventListener('click', () => {
+      current = (current - 1 + realImages.length) % realImages.length;
+      lbImg.src = realImages[current].src;
+    });
+
+    lbNext.addEventListener('click', () => {
+      current = (current + 1) % realImages.length;
+      lbImg.src = realImages[current].src;
+    });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lbPrev.click();
+      if (e.key === 'ArrowRight') lbNext.click();
+    });
+  </script>
 
 </body>
 </html>
