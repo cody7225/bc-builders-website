@@ -33,9 +33,29 @@
         <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
         <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
       </div>
-      <a href="contact.html" class="bg-gold text-white text-sm font-bold uppercase tracking-wide px-5 py-2 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="bg-gold text-white text-sm font-bold uppercase tracking-wide px-5 py-2 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+        <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+          <span class="block w-6 h-0.5 bg-navy"></span>
+          <span class="block w-6 h-0.5 bg-navy"></span>
+          <span class="block w-6 h-0.5 bg-navy"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-navy border-b-2 border-gold w-fit">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
+      </div>
     </div>
   </nav>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 
   <!-- PAGE HEADER -->
   <div class="bg-navy py-14">
