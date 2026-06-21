@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Engraving — B.C. Builders L.L.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#2d5a8e',
+            'navy-dark': '#1e3f66',
+            gold: '#e8a020',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
+      <a href="index.html">
+        <img src="logo.png" alt="B.C. Builders L.L.C." class="h-20 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="bg-gold text-white text-sm font-bold uppercase tracking-wide px-5 py-2 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+        <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+          <span class="block w-6 h-0.5 bg-navy transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-navy transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-navy transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- PAGE HEADER -->
+  <div class="bg-navy py-16 border-b-4 border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="text-gold text-sm uppercase tracking-widest font-bold hover:text-white transition-colors">← Back to Home</a>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mt-4" style="font-family: 'Oswald', sans-serif;">Concrete Engraving</h1>
+      <p class="text-gray-300 mt-4 text-lg max-w-2xl">Custom logos, text, and designs cut directly into concrete — permanent, professional, and built to stand out.</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2 overflow-hidden rounded shadow-lg">
+          <img src="logo-floor.jpg" alt="Concrete engraving example" class="w-full object-cover" style="height: 420px; object-position: center 70%;">
+        </div>
+        <div class="w-full md:w-1/2">
+          <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">What We Do</p>
+          <h2 class="text-3xl font-bold text-navy mb-4">Update, Decorate, or Brand Any Concrete Surface</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">You don't need new concrete to get engraving done. We can work on any existing cured surface — a driveway that's already down, a patio from 10 years ago, a warehouse floor, a sidewalk slab. Whatever concrete is already there, we can engrave it.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">No demolition. No replacement. Just professional results cut permanently into what's already there — then filled with colored epoxy to make it pop, or left with a clean natural finish.</p>
+          <a href="contact.html" class="inline-block bg-gold text-white font-bold uppercase tracking-wide text-sm px-7 py-3 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES — FEATURED CATEGORIES -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">What It's Used For</p>
+      <h2 class="text-3xl font-bold text-navy mb-3">Concrete Engraving Works in More Places Than You Think</h2>
+      <p class="text-gray-600 mb-10 max-w-2xl">Whether you're raising money, promoting a brand, decorating a space, or keeping people safe — engraving is a permanent, low-cost way to make concrete work harder for you.</p>
+
+      <!-- FUNDRAISING — FEATURED -->
+      <div class="bg-navy border-l-8 border-gold p-8 mb-6 rounded-sm">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="flex-shrink-0">
+            <span class="text-5xl">💰</span>
+          </div>
+          <div>
+            <div class="inline-block border-2 border-gold px-3 py-1 mb-3">
+              <span class="text-xs uppercase tracking-widest text-gold font-bold">Most Popular Opportunity</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3" style="font-family: 'Oswald', sans-serif; letter-spacing: 0.03em;">Fundraising — Sell Space in Concrete</h3>
+            <p class="text-gray-200 leading-relaxed mb-4">Engraved concrete is one of the most underused fundraising tools out there. Schools, churches, nonprofits, sports organizations, and community groups can sell engraved spaces in a walkway, courtyard, or plaza — and donors get something permanent in return.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Donor Recognition</p>
+                <p class="text-gray-300 text-sm">Engrave donor names, family names, or memorial tributes into walkway bricks or a dedicated slab. Give people something that lasts forever.</p>
+              </div>
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Advertising Tiles</p>
+                <p class="text-gray-300 text-sm">Sell engraved squares or sections to local businesses — logo, name, and URL cut right into the concrete. A permanent ad that doesn't need to be renewed.</p>
+              </div>
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Legacy Campaigns</p>
+                <p class="text-gray-300 text-sm">Capital campaigns, memorial walks, anniversary projects — sell engraved spots as part of a larger fundraising push. People pay more for something permanent.</p>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-block bg-gold text-white font-bold uppercase tracking-wide text-sm px-6 py-2 hover:opacity-90 transition-opacity">Ask Us About Fundraising Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-COLUMN CATEGORIES -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      </div>
+
+      <!-- BUSINESS BRANDING — FEATURED -->
+      <div class="bg-navy border-l-8 border-gold p-8 mb-6 rounded-sm">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="flex-shrink-0">
+            <span class="text-5xl">🏢</span>
+          </div>
+          <div>
+            <div class="inline-block border-2 border-gold px-3 py-1 mb-3">
+              <span class="text-xs uppercase tracking-widest text-gold font-bold">Business & Commercial</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3" style="font-family: 'Oswald', sans-serif; letter-spacing: 0.03em;">Business Branding — Make Your Entrance Stand Out</h3>
+            <p class="text-gray-200 leading-relaxed mb-4">First impressions are permanent. An engraved company logo or name cut into the floor of your entryway, lobby, or parking lot tells every customer they've arrived somewhere that takes pride in the details — and it never fades, peels, or needs to be replaced.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Logo at the Entrance</p>
+                <p class="text-gray-300 text-sm">Your company logo engraved right into the entryway floor — filled with your brand colors in epoxy. Every customer walks over it. Nobody forgets it.</p>
+              </div>
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Lobby & Showroom Floors</p>
+                <p class="text-gray-300 text-sm">Interior concrete floors engraved with branding, patterns, or signage — a professional look that holds up to heavy foot traffic without wearing out.</p>
+              </div>
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Parking Lots & Exterior</p>
+                <p class="text-gray-300 text-sm">Business name, address, or logo engraved into outdoor concrete. Looks sharp, adds credibility, and never needs repainting.</p>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-block bg-gold text-white font-bold uppercase tracking-wide text-sm px-6 py-2 hover:opacity-90 transition-opacity">Get a Quote for Your Business</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAFETY & HAZARDS — FEATURED -->
+      <div class="bg-navy border-l-8 border-gold p-8 rounded-sm">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="flex-shrink-0">
+            <span class="text-5xl">⚠️</span>
+          </div>
+          <div>
+            <div class="inline-block border-2 border-gold px-3 py-1 mb-3">
+              <span class="text-xs uppercase tracking-widest text-gold font-bold">Safety & Compliance</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3" style="font-family: 'Oswald', sans-serif; letter-spacing: 0.03em;">Safety Markings That Never Fade</h3>
+            <p class="text-gray-200 leading-relaxed mb-4">Paint fades. Floor tape peels. Stickers crack. Engraved safety markings stay sharp and readable year after year with zero maintenance — because they're cut directly into the concrete, not applied on top of it.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Emergency Exits</p>
+                <p class="text-gray-300 text-sm">Exit routes engraved directly into floor concrete — visible, permanent, and readable even in low-light conditions. No more repainting every year.</p>
+              </div>
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Hazard & Walk Zones</p>
+                <p class="text-gray-300 text-sm">Designate restricted areas, forklift zones, pedestrian walkways, and hazard boundaries — permanently marked and always visible on the floor.</p>
+              </div>
+              <div class="bg-white bg-opacity-10 border border-gold border-opacity-40 p-4">
+                <p class="text-gold font-bold text-sm uppercase tracking-wide mb-1">Safety Assembly Areas</p>
+                <p class="text-gray-300 text-sm">Muster points, first aid locations, and safety stations marked in concrete. Permanent identification that holds up in any weather or condition.</p>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-block bg-gold text-white font-bold uppercase tracking-wide text-sm px-6 py-2 hover:opacity-90 transition-opacity">Ask Us About Safety Markings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + EPOXY SECTION -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+        <div class="w-full md:w-1/2">
+          <img src="engraving-cross.jpg" alt="Engraved cross with God all things are possible" class="w-full rounded shadow-lg">
+        </div>
+        <div class="w-full md:w-1/2">
+          <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">The Process</p>
+          <h2 class="text-3xl font-bold text-navy mb-4">With or Without Epoxy</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">After engraving, you have two options for the finish:</p>
+          <ul class="space-y-4 mb-6">
+            <li class="flex gap-3">
+              <span class="text-gold font-bold text-lg">—</span>
+              <div>
+                <p class="font-bold text-navy">Epoxy Fill</p>
+                <p class="text-gray-600 text-sm leading-relaxed">We pack the engraved lines with colored epoxy, then sand flush for a smooth, vibrant design. Great for logos, text, and anything you want to really stand out.</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gold font-bold text-lg">—</span>
+              <div>
+                <p class="font-bold text-navy">Natural Engraved Finish</p>
+                <p class="text-gray-600 text-sm leading-relaxed">Clean, sharp lines with no fill. A more subtle look that works well for large patterns, borders, and textured designs.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="contact.html" class="inline-block bg-gold text-white font-bold uppercase tracking-wide text-sm px-7 py-3 rounded hover:opacity-90 transition-opacity">Talk to Us About Your Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to engrave?</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">Send us a photo of your surface and a rough idea of what you want — we'll give you a free quote, no pressure.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="contact.html" class="bg-gold text-white font-bold uppercase tracking-wide px-8 py-3 rounded hover:opacity-90 transition-opacity">Request a Free Quote</a>
+        <a href="tel:4103109207" class="text-gold font-bold text-xl hover:text-white transition-colors">(410) 310-9207</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 B.C. Builders L.L.C. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Contact</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

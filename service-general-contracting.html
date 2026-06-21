@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Contracting — B.C. Builders L.L.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#2d5a8e',
+            'navy-dark': '#1e3f66',
+            gold: '#e8a020',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
+      <a href="index.html">
+        <img src="logo.png" alt="B.C. Builders L.L.C." class="h-20 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="bg-gold text-white text-sm font-bold uppercase tracking-wide px-5 py-2 rounded hover:opacity-90 transition-opacity">Get a Free Quote</a>
+        <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+          <span class="block w-6 h-0.5 bg-navy transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-navy transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-navy transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="index.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+        <a href="about.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">About</a>
+        <a href="portfolio.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Portfolio</a>
+        <a href="contact.html" class="text-sm uppercase tracking-wide font-medium text-gray-600 hover:text-navy transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- PAGE HEADER -->
+  <div class="bg-navy py-16 border-b-4 border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="text-gold text-sm uppercase tracking-widest font-bold hover:text-white transition-colors">← Back to Home</a>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mt-4" style="font-family: 'Oswald', sans-serif;">General Contracting</h1>
+      <p class="text-gray-300 mt-4 text-lg max-w-2xl">Small to mid-size projects managed from start to finish — on time, on budget, no headaches.</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=800&q=80" alt="Construction plans rolled out on a desk" class="w-full rounded shadow-lg object-cover" style="max-height:380px;">
+        </div>
+        <div class="w-full md:w-1/2">
+          <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">Project Management</p>
+          <h2 class="text-3xl font-bold text-navy mb-4">One Call, One Point of Contact</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Most people don't want to manage a construction project — they want it done. That's where we come in. You tell us what you need, and we handle the coordination, the scheduling, and the quality control from day one through final walkthrough.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">We take on small to mid-size projects where a big GC wouldn't bother but you still need someone responsible running the show. No endless phone tags, no finger-pointing between trades — just a straight answer and a job that gets done.</p>
+          <div class="flex items-center gap-3 mb-6 bg-gray-50 border-l-4 border-gold px-4 py-3">
+            <span class="text-gold text-xl">✓</span>
+            <p class="text-navy font-bold text-sm uppercase tracking-wide">Licensed & Insured in the State of Maryland</p>
+          </div>
+          <a href="contact.html" class="inline-block bg-gold text-white font-bold uppercase tracking-wide text-sm px-7 py-3 rounded hover:opacity-90 transition-opacity">Talk to Us About Your Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE HANDLE -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs uppercase tracking-widest text-gold font-bold mb-2">What We Handle</p>
+      <h2 class="text-3xl font-bold text-navy mb-10">From Site Prep to Final Walkthrough</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="bg-white border-t-4 border-gold p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-navy mb-2" style="font-family: 'Oswald', sans-serif;">Site Prep & Grading</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Before anything else can go in, the ground has to be right. We handle clearing, grading, and compaction so the rest of the project has a solid foundation to work from.</p>
+        </div>
+
+        <div class="bg-white border-t-4 border-gold p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-navy mb-2" style="font-family: 'Oswald', sans-serif;">Subcontractor Coordination</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">We know who does good work and we keep them on schedule. When your project needs trades beyond what we do directly, we coordinate them so nothing falls through the cracks.</p>
+        </div>
+
+        <div class="bg-white border-t-4 border-gold p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-navy mb-2" style="font-family: 'Oswald', sans-serif;">Project Scheduling</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">We put together a realistic timeline and stick to it. You'll always know where things stand — not find out something slipped when you happen to check in.</p>
+        </div>
+
+        <div class="bg-white border-t-4 border-gold p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-navy mb-2" style="font-family: 'Oswald', sans-serif;">Quality Control</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">We don't sign off on work that isn't right. Every phase gets checked before the next one starts — so problems get caught early, not after everything is finished.</p>
+        </div>
+
+        <div class="bg-white border-t-4 border-gold p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-navy mb-2" style="font-family: 'Oswald', sans-serif;">Budget Management</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Surprise bills are how trust gets broken. We're upfront about costs from the start and flag anything that changes before we spend it — no invoicing you for decisions you didn't make.</p>
+        </div>
+
+        <div class="bg-white border-t-4 border-gold p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-navy mb-2" style="font-family: 'Oswald', sans-serif;">Final Walkthrough</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">We don't disappear when the work is done. We walk the job with you, confirm everything is right, and handle any punch-list items before we close it out.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOD FIT SECTION -->
+  <section class="bg-navy py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs uppercase tracking-widest text-gold font-bold mb-4 text-center">Is This the Right Fit?</p>
+      <h2 class="text-3xl font-bold text-white mb-8 text-center">Projects We're a Good Fit For</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex gap-3 items-start">
+          <span class="text-gold font-bold text-xl mt-0.5">—</span>
+          <p class="text-gray-200">Outdoor improvements — driveways, patios, retaining walls with site prep included</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-gold font-bold text-xl mt-0.5">—</span>
+          <p class="text-gray-200">Small addition or structure builds where you need someone managing the whole job</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-gold font-bold text-xl mt-0.5">—</span>
+          <p class="text-gray-200">Projects with multiple trades that need coordination and a point of accountability</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-gold font-bold text-xl mt-0.5">—</span>
+          <p class="text-gray-200">Jobs too small for the big guys but too involved for a single handyman</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-navy mb-4">Not sure if we're the right fit?</h2>
+      <p class="text-gray-600 mb-8 max-w-xl mx-auto">Give us a call and describe the project. We'll tell you straight whether it's something we handle — and if not, we'll point you in the right direction.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="contact.html" class="bg-gold text-white font-bold uppercase tracking-wide px-8 py-3 rounded hover:opacity-90 transition-opacity">Get in Touch</a>
+        <a href="tel:4103109207" class="text-navy font-bold text-xl hover:text-gold transition-colors">(410) 310-9207</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 B.C. Builders L.L.C. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Contact</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
