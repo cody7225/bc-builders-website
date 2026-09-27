@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.C. Builders L.L.C. — Pamphlet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+    :root {
+      --navy: #2d5a8e;
+      --navy-dark: #1e3f66;
+      --gold: #e8a020;
+    }
+
+    @page {
+      size: 11in 8.5in;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 10pt;
+      color: #1f2937;
+    }
+
+    @media screen {
+      body {
+        background: #c8cdd5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        padding: 48px;
+      }
+    }
+
+    /* ── Print note (screen only) ── */
+    .print-note {
+      background: #1e3f66;
+      color: rgba(255,255,255,0.85);
+      font-size: 8pt;
+      padding: 10px 20px;
+      border-left: 4px solid #e8a020;
+      width: 11in;
+      line-height: 1.5;
+    }
+    .print-note strong { color: #e8a020; }
+    @media print { .print-note { display: none; } }
+
+    /* ── SHEET ── */
+    .sheet {
+      width: 11in;
+      height: 8.5in;
+      display: flex;
+      background: white;
+      page-break-after: always;
+      overflow: hidden;
+      position: relative;
+    }
+    .sheet:last-child { page-break-after: auto; }
+
+    @media screen {
+      .sheet { box-shadow: 0 8px 40px rgba(0,0,0,0.28); }
+
+      /* center fold indicator */
+      .sheet::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        border-left: 2px dashed rgba(0,0,0,0.18);
+        pointer-events: none;
+        z-index: 50;
+      }
+    }
+    @media print {
+      .sheet::after { display: none; }
+    }
+
+    /* ── PANEL BASE ── */
+    .panel {
+      width: 5.5in;
+      height: 8.5in;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+
+    /* ══════════════════════════════════════════
+       PANEL 1 — FRONT COVER (Sheet 1, Right)
+       ══════════════════════════════════════════ */
+    .panel-front {
+      background: var(--navy);
+      border-left: 5px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero photo with overlay */
+    .front-hero {
+      position: relative;
+      width: 100%;
+      height: 4.1in;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .front-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 65%;
+      display: block;
+    }
+
+    .front-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(20,40,70,0.82) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0.22in 0.32in;
+      text-align: center;
+    }
+
+    .front-company-badge {
+      font-family: 'Oswald', sans-serif;
+      font-size: 7pt;
+      color: var(--gold);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .front-hero-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 40pt;
+      font-weight: 700;
+      color: white;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 9px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+
+    .front-hero-sub {
+      font-size: 7pt;
+      color: rgba(255,255,255,0.72);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* CNC Tech callout row */
+    .front-tech-row {
+      display: flex;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .front-tech-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 5px;
+      border-right: 1px solid rgba(255,255,255,0.28);
+      text-align: center;
+    }
+
+    .front-tech-item:last-child { border-right: none; }
+
+    .tech-icon {
+      font-size: 17pt;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .tech-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: white;
+      line-height: 1.18;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Tagline section */
+    .front-tagline-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0.14in 0.38in 0.1in;
+      text-align: center;
+      background: var(--navy);
+    }
+
+    .front-big-tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+      color: white;
+      line-height: 1.22;
+      margin-bottom: 8px;
+    }
+
+    .front-big-tagline em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .front-custom-desc {
+      font-size: 9pt;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.55;
+      margin-top: 0.1in;
+      margin-bottom: 9px;
+    }
+
+    .front-custom-desc strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .front-engrave-list {
+      list-style: none;
+      flex: 1;
+      align-self: stretch;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-content: space-around;
+      row-gap: 0.08in;
+      margin-top: 0.07in;
+    }
+
+    .front-engrave-list li {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10pt;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .front-engrave-list li::before {
+      content: '●';
+      color: var(--gold);
+      font-size: 9pt;
+      flex-shrink: 0;
+    }
+
+    .front-engrave-list li:last-child {
+      grid-column: 2;
+    }
+
+    /* Other services strip */
+    .front-other-services {
+      background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(232,160,32,0.22);
+      padding: 6px 0.38in;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .front-other-services p {
+      font-size: 5.8pt;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    /* Contact bar */
+    .front-contact {
+      background: var(--gold);
+      width: 100%;
+      padding: 12px 0.38in;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .front-contact .fc-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20pt;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .front-contact .fc-web {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.88);
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+
+    /* ══════════════════════════════════════════
+       PANEL 4 — BACK COVER (Sheet 1, Left)
+       ══════════════════════════════════════════ */
+    .panel-back {
+      background: #fdfdfd;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .back-body {
+      flex: 1;
+      padding: 0.22in 0.34in;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .back-section-header {
+      background: var(--navy);
+      border-left: 4px solid var(--gold);
+      padding: 6px 10px;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .back-section-header h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13pt;
+      color: white;
+      font-weight: 700;
+    }
+
+    .back-section-header p {
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+
+    .two-col-item h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 8.5pt;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .two-col-item p {
+      font-size: 6.5pt;
+      color: #6b7280;
+      line-height: 1.45;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef3f9;
+      border-left: 3px solid var(--gold);
+      padding: 4px 10px;
+      margin: 7px 0;
+      flex-shrink: 0;
+    }
+
+    .trust-badge span {
+      font-size: 7pt;
+      color: var(--navy);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 12px 0;
+      flex-shrink: 0;
+    }
+
+    .body-text {
+      font-size: 7.2pt;
+      color: #4b5563;
+      line-height: 1.52;
+    }
+
+    /* Signature block */
+    .back-signature {
+      margin-top: auto;
+      padding-top: 0.18in;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .back-signature .sig-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42pt;
+      color: var(--navy);
+      line-height: 1.1;
+      display: block;
+    }
+
+    .back-signature .sig-line {
+      display: block;
+      width: 2.4in;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 6px auto 5px;
+    }
+
+    .back-signature .sig-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 20pt;
+      color: var(--gold);
+      display: block;
+    }
+
+    .back-footer {
+      background: var(--navy-dark);
+      padding: 11px 0.34in;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .back-footer .bf-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16pt;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .back-footer .bf-web {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.72);
+      margin-top: 2px;
+    }
+
+    .back-footer .bf-copy {
+      font-size: 5.5pt;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+    }
+
+
+    /* ══════════════════════════════════════════
+       PANEL 2 — CONCRETE ENGRAVING (Sheet 2, Left)
+       ══════════════════════════════════════════ */
+    .panel-engraving {
+      background: white;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .panel-header {
+      background: var(--navy);
+      padding: 0.16in 0.32in;
+      border-bottom: 4px solid var(--gold);
+      flex-shrink: 0;
+    }
+
+    .panel-header h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18pt;
+      color: white;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .panel-header p {
+      font-size: 7pt;
+      color: rgba(255,255,255,0.68);
+      margin-top: 3px;
+    }
+
+    .panel-img {
+      width: 100%;
+      height: 3.4in;
+      object-fit: cover;
+      object-position: center 62%;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .panel-body {
+      padding: 0.17in 0.32in;
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .label {
+      font-size: 6pt;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11pt;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .use-cases {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .use-case {
+      border-top: 2.5px solid var(--gold);
+      padding-top: 5px;
+    }
+
+    .use-case h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 8pt;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .use-case p {
+      font-size: 6.2pt;
+      color: #6b7280;
+      line-height: 1.45;
+    }
+
+    .bottom-cta {
+      margin-top: auto;
+      padding-top: 8px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .bottom-cta .cta-label {
+      font-size: 6pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+
+    .bottom-cta .cta-note {
+      font-size: 6.5pt;
+      color: #6b7280;
+    }
+
+    .bottom-cta .cta-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14pt;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .bottom-cta .cta-web {
+      font-size: 6.5pt;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: right;
+    }
+
+
+    /* ══════════════════════════════════════════
+       PANEL 3 — STONE & MEMORIAL (Sheet 2, Right)
+       ══════════════════════════════════════════ */
+    .panel-stone {
+      background: #f9fafb;
+    }
+
+    .stone-body {
+      flex: 1;
+      padding: 0.17in 0.32in;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .stone-img {
+      width: 100%;
+      height: 1.38in;
+      object-fit: cover;
+      object-position: center 55%;
+      border-radius: 2px;
+      margin-bottom: 7px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .stone-img-placeholder {
+      width: 100%;
+      height: 1.38in;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 7pt;
+      border-radius: 2px;
+      margin-bottom: 7px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    ul.bullet-list {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    ul.bullet-list li {
+      font-size: 7pt;
+      color: #374151;
+      padding: 1.5px 0;
+      display: flex;
+      gap: 5px;
+      line-height: 1.45;
+    }
+
+    ul.bullet-list li::before {
+      content: '—';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .stone-footer {
+      background: var(--navy);
+      padding: 10px 0.32in;
+      flex-shrink: 0;
+    }
+
+    .stone-footer .sf-note {
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 2px;
+    }
+
+    .stone-footer .sf-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15pt;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    /* ── Website callout on front cover ── */
+    .website-callout {
+      width: 100%;
+      margin-top: 13px;
+      border: 2px solid var(--gold);
+      background: rgba(255,255,255,0.08);
+      padding: 9px 14px;
+      text-align: center;
+    }
+
+    .website-callout strong {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11.5pt;
+      color: white;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .website-callout .wc-url {
+      font-size: 8.5pt;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Ideas list (Panel 2) ── */
+    .ideas-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12pt;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 7px;
+      flex-shrink: 0;
+      border-left: 4px solid var(--gold);
+      padding-left: 7px;
+    }
+
+    .ideas-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .idea-item {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .idea-icon {
+      font-size: 14pt;
+      flex-shrink: 0;
+      width: 0.28in;
+      text-align: center;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+
+    .idea-title {
+      font-size: 7.5pt;
+      color: var(--navy);
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .idea-text {
+      font-size: 6.3pt;
+      color: #6b7280;
+      line-height: 1.48;
+    }
+
+    .safety-sub-list {
+      list-style: none;
+      margin-top: 3px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 8px;
+    }
+
+    .safety-sub-list li {
+      font-size: 6pt;
+      color: #6b7280;
+      line-height: 1.42;
+      display: flex;
+      gap: 3px;
+      align-items: baseline;
+    }
+
+    /* ── Memorial image (Panel 3) ── */
+    .memorial-img {
+      width: 100%;
+      height: 1.9in;
+      object-fit: cover;
+      object-position: center 60%;
+      border-radius: 2px;
+      margin-top: 7px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .memorial-img-placeholder {
+      width: 100%;
+      height: 1.15in;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 7pt;
+      border-radius: 2px;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-note">
+    <strong>Print Instructions:</strong> File &rarr; Print &rarr; Paper: Letter (8.5&Prime; &times; 11&Prime;) &bull; Orientation: Landscape &bull; Scale: 100% &bull; Margins: None (or Minimum) &bull; Print both sheets &bull; Fold each sheet down the center dashed line.
+  </div>
+
+
+  <!-- ================================================================
+       SHEET 1 — OUTSIDE OF PAMPHLET (what you see when it's folded)
+       LEFT PANEL = Back Cover (Panel 4)
+       RIGHT PANEL = Front Cover (Panel 1)
+       ================================================================ -->
+  <div class="sheet">
+
+    <!-- ── PANEL 4: BACK COVER ── -->
+    <div class="panel panel-back">
+
+      <div class="back-body">
+
+        <!-- General Contracting -->
+        <div style="flex-shrink:0;">
+          <div class="back-section-header">
+            <h3>General Contracting</h3>
+            <p>Small to mid-size projects managed start to finish</p>
+          </div>
+          <p class="body-text" style="margin-bottom:5px;">You tell us what you need — we handle coordination, scheduling, and quality control from day one through final walkthrough. One call, one point of contact, no headaches.</p>
+          <div class="trust-badge">
+            <span>&#10003; Licensed &amp; Insured — State of Maryland</span>
+          </div>
+          <div class="two-col" style="margin-top:7px;">
+            <div class="two-col-item">
+              <h4>Site Prep &amp; Grading</h4>
+              <p>Clearing, grading, and compaction — every project starts with a proper foundation to build from.</p>
+            </div>
+            <div class="two-col-item">
+              <h4>Subcontractor Coordination</h4>
+              <p>We keep the right trades on schedule so nothing falls through the cracks between jobs.</p>
+            </div>
+            <div class="two-col-item">
+              <h4>Quality Control</h4>
+              <p>Every phase checked before the next one starts — problems caught early, not after everything is finished.</p>
+            </div>
+            <div class="two-col-item">
+              <h4>Budget Management</h4>
+              <p>Upfront on costs from day one. No surprise bills, no decisions made without your approval.</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Concrete Construction -->
+        <div style="flex-shrink:0;">
+          <div class="back-section-header">
+            <h3>Concrete Construction</h3>
+            <p>Patios, sidewalks, driveways &amp; more — poured and finished right</p>
+          </div>
+          <div class="two-col">
+            <div class="two-col-item">
+              <h4>Patios</h4>
+              <p>Custom shapes, poured flat and level. Smooth, broom, or exposed aggregate finish. Built to last without heaving or cracking.</p>
+            </div>
+            <div class="two-col-item">
+              <h4>Sidewalks &amp; Walkways</h4>
+              <p>Properly graded for drainage and finished clean. Residential and commercial — done right the first time.</p>
+            </div>
+            <div class="two-col-item">
+              <h4>Driveways</h4>
+              <p>New pours and replacements with proper base prep and grading. We handle demo all the way through final finish.</p>
+            </div>
+            <div class="two-col-item">
+              <h4>Pool Decks &amp; Slabs</h4>
+              <p>Pool surrounds, footings, shed pads, stoops — if you need concrete poured and finished, we handle it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-signature">
+          <span class="sig-text">Thank You &amp; God Bless</span>
+          <span class="sig-line"></span>
+          <span class="sig-name">B.C. Builders L.L.C.</span>
+        </div>
+
+      </div><!-- /back-body -->
+
+      <div class="back-footer">
+        <p class="bf-phone">(410) 310-9207</p>
+        <p class="bf-web">bcbuildersmd.com &nbsp;|&nbsp; Free Quotes — No Pressure</p>
+        <p class="bf-copy">&#169; 2026 B.C. Builders L.L.C. &nbsp;|&nbsp; Maryland</p>
+      </div>
+
+    </div><!-- /panel-back -->
+
+
+    <!-- ── PANEL 1: FRONT COVER ── -->
+    <div class="panel panel-front">
+
+      <!-- Hero photo with big text overlay -->
+      <div class="front-hero">
+        <img src="img-0832-crop.jpg" alt="Concrete engraving" class="front-hero-img">
+        <div class="front-hero-overlay">
+          <p class="front-company-badge">B.C. Builders L.L.C. &mdash; Maryland</p>
+          <h1 class="front-hero-headline">ANY DESIGN.<br>ANY SIZE.<br>WE CAN ENGRAVE.</h1>
+          <p class="front-hero-sub">Portable CNC Engraving Machine &bull; Permanent Results</p>
+        </div>
+      </div>
+
+      <!-- CNC tech callouts -->
+      <div class="front-tech-row">
+        <div class="front-tech-item">
+          <span class="tech-icon">⚡</span>
+          <span class="tech-label">New<br>Technology</span>
+        </div>
+        <div class="front-tech-item">
+          <span class="tech-icon">🚛</span>
+          <span class="tech-label">Portable CNC<br>Engraving Machine</span>
+        </div>
+        <div class="front-tech-item">
+          <span class="tech-icon">💧</span>
+          <span class="tech-label">Epoxy Fill —<br>Extra Wow</span>
+        </div>
+        <div class="front-tech-item">
+          <span class="tech-icon">♾</span>
+          <span class="tech-label">Permanently<br>Engraved</span>
+        </div>
+      </div>
+
+      <!-- Big tagline -->
+      <div class="front-tagline-section">
+        <p class="front-big-tagline">Elaborate or simple &mdash;<br>we cut <em>any design</em> into concrete.</p>
+        <p class="front-custom-desc"><strong>Custom work to set any space apart</strong> — from logos to words, from compasses to animals. If you can think of it, we can engrave it.</p>
+        <ul class="front-engrave-list">
+          <li>Logos</li>
+          <li>Text</li>
+          <li>Portraits</li>
+          <li>Compasses</li>
+          <li>Animals</li>
+          <li>Patterns</li>
+          <li>Custom Art</li>
+        </ul>
+      </div>
+
+      <!-- Other services pushed down tiny -->
+      <div class="front-other-services">
+        <p>Also: Stone &amp; Memorial Work &nbsp;&middot;&nbsp; Concrete Construction &nbsp;&middot;&nbsp; General Contracting</p>
+      </div>
+
+      <!-- Contact bar -->
+      <div class="front-contact">
+        <p class="fc-phone">(410) 310-9207</p>
+        <p class="fc-web">bcbuildersmd.com &nbsp;|&nbsp; Free Quotes — No Pressure</p>
+      </div>
+
+    </div><!-- /panel-front -->
+
+  </div><!-- /sheet 1 -->
+
+
+  <!-- ================================================================
+       SHEET 2 — INSIDE OF PAMPHLET (what you see when it's opened)
+       LEFT PANEL  = Concrete Engraving (Panel 2)
+       RIGHT PANEL = Stone & Memorial (Panel 3)
+       ================================================================ -->
+  <div class="sheet">
+
+    <!-- ── PANEL 2: CONCRETE ENGRAVING ── -->
+    <div class="panel panel-engraving">
+
+      <div class="panel-header">
+        <h2>Concrete Engraving</h2>
+        <p>Custom designs cut permanently into any existing concrete surface</p>
+      </div>
+
+      <img src="engraving-cross-crop.jpg" alt="Engraved cross — With God All Things Are Possible" class="panel-img">
+
+      <div class="panel-body">
+
+        <p class="label">What We Do</p>
+        <p class="section-title">Update, Decorate, or Brand Any Concrete Surface</p>
+        <p class="body-text" style="margin-bottom:9px;">You don't need new concrete. We work on any existing cured surface — a driveway that's already down, a patio from years ago, a warehouse floor, a sidewalk slab. Designs are cut permanently in, then filled with colored epoxy to make them pop, or left with a clean natural finish. No demolition. No replacement.</p>
+
+        <hr class="divider">
+
+        <p class="ideas-heading">Ideas</p>
+        <div class="ideas-list">
+
+          <div class="idea-item">
+            <span class="idea-icon">🎨</span>
+            <div>
+              <p class="idea-title"><strong>Patio Decorating</strong></p>
+              <p class="idea-text">Turn a plain concrete patio into a custom outdoor space. Add borders, patterns, family names, or custom artwork — permanently engraved and built to last outdoors for years with no maintenance.</p>
+            </div>
+          </div>
+
+          <div class="idea-item">
+            <span class="idea-icon">💰</span>
+            <div>
+              <p class="idea-title"><strong>Fundraising</strong></p>
+              <p class="idea-text">A great way to ask for donations while selling space that's already owned in sidewalks and parking lots. Donor names, business ads &amp; legacy tributes — schools, churches &amp; nonprofits use this for capital campaigns and lasting recognition projects.</p>
+            </div>
+          </div>
+
+          <div class="idea-item">
+            <span class="idea-icon">⚠️</span>
+            <div>
+              <p class="idea-title"><strong>Safety Markings</strong> — paint fades, tape peels, engraving lasts forever</p>
+              <ul class="safety-sub-list">
+                <li>🚪 Emergency exit routes</li>
+                <li>⛔ Hazard &amp; restricted zones</li>
+                <li>🚜 Forklift &amp; vehicle lanes</li>
+                <li>🚶 Pedestrian walkways</li>
+                <li>🔥 Fire lanes &amp; safety zones</li>
+                <li>⛑️ First aid stations</li>
+                <li>🏁 Assembly &amp; muster areas</li>
+                <li>🅿️ Parking space markers</li>
+                <li>📦 Loading dock zones</li>
+                <li>🚧 Authorized access only</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bottom-cta">
+          <div>
+            <p class="cta-label">Ready to engrave?</p>
+            <p class="cta-note">Send us a photo of your surface — free quote, no pressure.</p>
+          </div>
+          <div style="text-align:right;">
+            <p class="cta-phone">(410) 310-9207</p>
+            <p class="cta-web">bcbuildersmd.com</p>
+          </div>
+        </div>
+
+      </div><!-- /panel-body -->
+    </div><!-- /panel-engraving -->
+
+
+    <!-- ── PANEL 3: STONE & MEMORIAL ── -->
+    <div class="panel panel-stone">
+
+      <div class="panel-header">
+        <h2>Stone &amp; Memorial Work</h2>
+        <p>Custom engraved stone markers, address slabs &amp; memorial pieces</p>
+      </div>
+
+      <div class="stone-body">
+
+        <!-- Driveway Stone -->
+        <p class="label">Custom Stone Markers</p>
+        <p class="section-title" style="margin-bottom:6px;">End-of-Driveway Address Slabs</p>
+
+        <img src="driveway-stone-crop.jpg" alt="Custom driveway address stone" class="stone-img"
+          onerror="this.outerHTML='<div class=&quot;stone-img-placeholder&quot;>[ Driveway Address Stone Photo ]</div>'">
+
+        <p class="body-text">We build custom concrete slabs that look and feel like natural stone, then engrave your address, family name, or a custom design right into the surface — stained and finished with epoxy to create something that truly stands out at the end of your driveway. A permanent upgrade that adds curb appeal and makes your property easy to find. We build them in any size from a compact <strong>2&times;2 ft</strong> all the way up to a grand <strong>6&times;6 ft</strong> entrance piece — want something that wows every guest the moment they pull in? We can do that.</p>
+        <ul class="bullet-list">
+          <li>Custom address &amp; family name markers</li>
+          <li>Engraving + staining + epoxy finish</li>
+          <li>Built to last, looks like natural stone</li>
+          <li>Any size — 2&times;2 up to 6&times;6 ft custom entrance pieces</li>
+        </ul>
+
+        <hr class="divider" style="margin: 9px 0;">
+
+        <!-- Memorial -->
+        <p class="label">Memorial Engraving</p>
+        <p class="section-title" style="margin-bottom:5px;">Headstones &amp; Memorial Pieces</p>
+        <p class="body-text">We treat every memorial project with the care it deserves. You pick out the stone — we handle the engraving. Names, dates, portraits, scripture, or whatever design honors your loved one best. We move quickly so you're never left waiting during a difficult time.</p>
+        <ul class="bullet-list">
+          <li>Headstone engraving</li>
+          <li>Memorial benches &amp; tribute slabs</li>
+          <li>Fast turnaround — we don't leave you waiting</li>
+          <li>Handled personally, every time</li>
+        </ul>
+
+        <img src="dog-headstone-crop.jpg" alt="Custom engraved memorial headstone" class="memorial-img"
+          onerror="this.outerHTML='<div class=&quot;memorial-img-placeholder&quot;>[ Memorial Headstone Photo ]</div>'">
+
+      </div><!-- /stone-body -->
+
+      <div class="stone-footer">
+        <p class="sf-note">For memorial work, reach out directly — we'll take care of you.</p>
+        <p class="sf-phone">(410) 310-9207</p>
+      </div>
+
+    </div><!-- /panel-stone -->
+
+  </div><!-- /sheet 2 -->
+
+</body>
+</html>
